@@ -1,0 +1,3434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Ana Silva - Nutricionista Especialista</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET E CONFIGURAÇÕES GERAIS ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #4CAF50;
+            --primary-dark: #388E3C;
+            --secondary: #FF9800;
+            --light: #F5F5F5;
+            --dark: #333;
+            --gray: #757575;
+            --white: #FFFFFF;
+            --header-bg: #748E71;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-family: 'Antic Didone', serif;
+        }
+        
+        h2 {
+            font-family: 'Antic Didone', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background-color: #D78A32;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #F57C00;
+        }
+
+        /* ===== HEADER E NAVEGAÇÃO ===== */
+        header {
+            background-color: var(--header-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo img {
+            width: 150px;
+            height: auto;
+            max-height: 70px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(245,245,245,0.9) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 60px;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            width: 100%;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .image-container {
+            width: 100%;
+            max-width: 450px;
+            height: 550px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        .image-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary);
+            border-radius: 20px;
+            top: 15px;
+            left: 15px;
+            z-index: -1;
+        }
+        
+        .hero-text {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-family: 'Antic Didone', serif;
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            color: var(--gray);
+            max-width: 100%;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        /* ===== SEÇÃO SOBRE ===== */
+        .about {
+            background-color: var(--white);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            max-width: 400px;
+            height: 500px;
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+
+        /* ===== SEÇÃO EBOOK ===== */
+        .ebook {
+            background-color: var(--light);
+        }
+        
+        .ebook-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .ebook-img {
+            flex: 1;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .ebook-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .ebook-info {
+            flex: 1;
+        }
+        
+        .price {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .benefit i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* ===== SEÇÃO COMPULSÃO ALIMENTAR ===== */
+        .compulsion {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-left: 4px solid #388E3C;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            padding: 20px 25px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            background: #f8fafc;
+            transition: background 0.3s;
+        }
+
+        .card-header:hover {
+            background: #f1f5f9;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: #388E3C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            flex: 1;
+            color: #2c3e50;
+            font-size: 1.3rem;
+        }
+
+        .card-toggle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            transition: transform 0.3s;
+        }
+
+        .card-content {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .info-card.active .card-content {
+            padding: 25px;
+            max-height: 2000px;
+        }
+
+        .info-card.active .card-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Conteúdo específico dos cards */
+        .comparison {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .comparison-item {
+            flex: 1;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #388E3C;
+        }
+
+        .comparison-item h4 {
+            margin-top: 0;
+            color: #2c3e50;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        .comparison-item ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .comparison-item li {
+            margin-bottom: 8px;
+        }
+
+        .symptoms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .symptom-item {
+            display: flex;
+            align-items: center;
+            background: #f8fafc;
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .symptom-item:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+
+        .symptom-icon {
+            width: 40px;
+            height: 40px;
+            background: #388E3C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .symptom-quiz {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .quiz-options label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .quiz-options input {
+            margin-right: 10px;
+        }
+
+        .quiz-btn {
+            background: #388E3C;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .quiz-btn:hover {
+            background: #388E3C;
+        }
+
+        .quiz-result {
+            margin-top: 15px;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            border-left: 4px solid #2ecc71;
+        }
+
+        .health-impacts {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .impact-category {
+            flex: 1;
+        }
+
+        .impact-category h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .impact-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .impact-tag {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .impact-category:nth-child(2) .impact-tag {
+            background: #9b59b6;
+        }
+
+        .cycle-info {
+            margin-top: 30px;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .cycle-steps {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .cycle-step {
+            text-align: center;
+            flex: 1;
+            min-width: 100px;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #388E3C;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: bold;
+        }
+
+        .cycle-arrow {
+            color: #7f8c8d;
+            font-weight: bold;
+        }
+
+        .cycle-note {
+            font-style: italic;
+            color: #7f8c8d;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .treatment-approaches {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .approach {
+            display: flex;
+            align-items: flex-start;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .approach:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+
+        .approach-icon {
+            width: 50px;
+            height: 50px;
+            background: #388E3C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .approach-text h4 {
+            margin: 0 0 8px;
+            color: #2c3e50;
+        }
+
+        .approach-text p {
+            margin: 0;
+            color: #5a6c7d;
+        }
+
+        .treatment-goal {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: #2c3e50;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .cta-button {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .cta-button:hover {
+            background: #c0392b;
+        }
+
+        /* ===== SEÇÃO DEPOIMENTOS ===== */
+        .testimonials {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #4CAF50;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #718096;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        /* Carrossel */
+        .testimonials-carousel {
+            max-width: 900px;
+            margin: 0 auto 60px;
+            position: relative;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            height: 380px;
+            overflow: hidden;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.6s ease;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .testimonial-content {
+            width: 100%;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .quote-mark {
+            font-size: 4rem;
+            color: #4CAF50;
+            line-height: 1;
+            margin-bottom: 15px;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 25px;
+            font-style: italic;
+            position: relative;
+            max-height: 120px;
+            overflow-y: auto;
+            padding: 0 10px;
+        }
+
+        .testimonial-author {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #4CAF50;
+            flex-shrink: 0;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            color: #2d3748;
+            margin: 0 0 5px;
+            font-weight: 600;
+        }
+
+        .author-info p {
+            color: #718096;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Métricas de Transformação */
+        .transformation-metrics {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 12px;
+            min-width: 100px;
+            transition: transform 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .metric:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #4CAF50;
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: #718096;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        /* Controles do Carrossel */
+        .carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .carousel-btn {
+            background: white;
+            border: 2px solid #e2e8f0;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            color: #4CAF50;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-btn:hover {
+            background: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+            transform: scale(1.1);
+        }
+
+        .carousel-indicators {
+            display: flex;
+            gap: 10px;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #cbd5e0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: #4CAF50;
+            transform: scale(1.2);
+        }
+
+        /* ===== SEÇÃO PLANOS ===== */
+        .plans {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .plans-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .plan {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+        }
+
+        .plan:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .plan.featured {
+            border-color: #4CAF50;
+            transform: scale(1.05);
+        }
+
+        .plan.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .plan.premium {
+            border-color: #d69e2e;
+        }
+
+        /* Cabeçalho dos planos */
+        .plan-header {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .plan-header h3 {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin: 0 0 10px;
+        }
+
+        .plan-badge {
+            display: inline-block;
+            padding: 6px 15px;
+            background: #e2e8f0;
+            color: #4a5568;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .plan-badge.popular {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .featured-ribbon {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #e53e3e;
+            color: white;
+            padding: 8px 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 4px;
+            transform: rotate(5deg);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Preços */
+        .plan-price {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .currency {
+            font-size: 1.5rem;
+            color: #718096;
+            vertical-align: top;
+        }
+
+        .amount {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            line-height: 1;
+        }
+
+        .period {
+            font-size: 1rem;
+            color: #718096;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .price-comparison {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #a0aec0;
+            font-size: 1.1rem;
+            margin-right: 10px;
+        }
+
+        .discount {
+            background: #48bb78;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .plan-description {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .plan-description p {
+            margin: 0;
+            color: #718096;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Lista de características */
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px;
+            flex: 1;
+        }
+
+        .plan-features li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: #4a5568;
+        }
+
+        .plan-features li.disabled {
+            color: #cbd5e0;
+        }
+
+        .plan-features i {
+            margin-right: 12px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .plan-features li:not(.disabled) i.fa-check {
+            color: #48bb78;
+        }
+
+        .plan-features li.disabled i.fa-times {
+            color: #e53e3e;
+        }
+
+        /* Ações dos planos */
+        .plan-actions {
+            text-align: center;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
+        }
+
+        .btn-outline:hover {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-primary {
+            background: #4CAF50;
+            color: white;
+            border: 2px solid #4CAF50;
+        }
+
+        .btn-primary:hover {
+            background: #388E3C;
+            border-color: #388E3C;
+        }
+
+        .savings-info, .payment-info {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+
+        .payment-info {
+            font-weight: 600;
+        }
+
+        /* Informações adicionais */
+        .plans-info {
+            margin-bottom: 60px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .info-item {
+            text-align: center;
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .info-item h4 {
+            margin: 0 0 10px;
+            color: #2d3748;
+        }
+
+        .info-item p {
+            margin: 0;
+            color: #718096;
+            line-height: 1.5;
+        }
+
+        /*Redes Sociais*/
+        .social-media {
+            background: #f8f9fa;
+            padding: 80px 0;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .social-media .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .social-media h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .social-intro {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .social-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .social-card p {
+            margin-bottom: 25px;
+            color: #666;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #2c3e50;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .social-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Cores específicas para cada rede social */
+        .instagram .social-icon { color: #E4405F; }
+        .facebook .social-icon { color: #1877F2; }
+        .twitter .social-icon { color: #1DA1F2; }
+        .whatsapp .social-icon { color: #25D366; }
+
+        .instagram .social-link { background: #E4405F; }
+        .facebook .social-link { background: #1877F2; }
+        .twitter .social-link { background: #1DA1F2; }
+        .whatsapp .social-link { background: #25D366; }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .social-media {
+                padding: 60px 0;
+            }
+            
+            .social-media h2 {
+                font-size: 2rem;
+            }
+            
+            .social-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .social-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .social-card:nth-child(1) { animation-delay: 0.1s; }
+        .social-card:nth-child(2) { animation-delay: 0.2s; }
+        .social-card:nth-child(3) { animation-delay: 0.3s; }
+        .social-card:nth-child(4) { animation-delay: 0.4s; }
+
+        /* ===== SEÇÃO DEPOIMENTOS DO EBOOK ===== */
+        .ebook-testimonials {
+            background-color: var(--white);
+        }
+        
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .author-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        .myths-simple {
+            background: #f8f9fa;
+            padding: 60px 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .myths-simple .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .myths-simple h2 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .myths-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .myths-title, .truths-title {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+
+        .myths-title {
+            color: #e74c3c;
+            border-bottom-color: #e74c3c;
+        }
+
+        .truths-title {
+            color: #27ae60;
+            border-bottom-color: #27ae60;
+        }
+
+        .myth-item, .truth-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .myth-item {
+            border-left-color: #e74c3c;
+        }
+
+        .truth-item {
+            border-left-color: #27ae60;
+        }
+
+        .myth-header, .truth-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .myth-icon {
+            color: #e74c3c;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .truth-icon {
+            color: #27ae60;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .myth-item h4, .truth-item h4 {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .myth-item p, .truth-item p {
+            color: #666;
+            line-height: 1.5;
+            margin: 0;
+            padding-left: 32px;
+        }
+
+        .myths-note {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .myths-note p {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .myths-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .myths-simple h2 {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+            
+            .myths-title, .truths-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .myths-simple {
+                padding: 40px 0;
+            }
+            
+            .myth-item, .truth-item {
+                padding: 15px;
+            }
+            
+            .myth-item p, .truth-item p {
+                padding-left: 0;
+            }
+            
+            .myth-header, .truth-header {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+        }
+
+        /* ===== SEÇÃO FAQ ===== */
+        .faq {
+            background-color: var(--light);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            background-color: var(--white);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+        
+        .faq-answer {
+            background-color: var(--white);
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 20px;
+        }
+
+        /* ===== SEÇÃO CONTATO ===== */
+        .contact {
+            background-color: var(--white);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 30px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+        
+        .contact-detail i {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-links i {
+            width: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 1200px) {
+            .container {
+                width: 95%;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .hero-text {
+                padding-left: 0;
+                order: 2;
+            }
+            
+            .hero-image {
+                order: 1;
+            }
+            
+            .image-container {
+                max-width: 400px;
+                height: 500px;
+            }
+            
+            .hero p {
+                max-width: 100%;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .about-content,
+            .ebook-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .testimonials-container,
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--header-bg);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: left 0.3s;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .image-container {
+                max-width: 350px;
+                height: 450px;
+            }
+            
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+            
+            .plans-container {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .plan.featured {
+                transform: none;
+            }
+            
+            .plan.featured:hover {
+                transform: translateY(-10px);
+            }
+            
+            .featured-ribbon {
+                position: relative;
+                top: 0;
+                right: 0;
+                transform: none;
+                margin-bottom: 10px;
+            }
+            
+            .testimonials-container,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            /* Responsividade da seção de depoimentos */
+            .carousel-wrapper {
+                height: 420px;
+            }
+            
+            .testimonial-slide {
+                padding: 25px 15px;
+            }
+            
+            .testimonial-content {
+                padding: 0 10px;
+            }
+            
+            .testimonial-text {
+                font-size: 1.1rem;
+                max-height: 140px;
+                margin-bottom: 20px;
+            }
+            
+            .quote-mark {
+                font-size: 3.5rem;
+                margin-bottom: 10px;
+            }
+            
+            .testimonial-author {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+                margin-bottom: 25px;
+            }
+            
+            .author-info {
+                text-align: center;
+            }
+            
+            .author-avatar {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .transformation-metrics {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+            
+            .metric {
+                min-width: 85px;
+                padding: 12px 8px;
+                flex: 1;
+                max-width: 100px;
+            }
+            
+            .metric-value {
+                font-size: 1.5rem;
+            }
+            
+            .metric-label {
+                font-size: 0.8rem;
+            }
+            
+            .carousel-controls {
+                gap: 20px;
+                margin-top: 20px;
+            }
+            
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+            }
+            
+            /* Responsividade da seção compulsão alimentar */
+            .comparison, .health-impacts {
+                flex-direction: column;
+            }
+            
+            .symptoms-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cycle-steps {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .cycle-arrow {
+                transform: rotate(90deg);
+            }
+            
+            .approach {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .approach-icon {
+                margin: 0 auto 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                width: 90%;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .image-container {
+                max-width: 300px;
+                height: 380px;
+            }
+            
+            .plan {
+                padding: 30px 20px;
+            }
+            
+            .plan-price {
+                font-size: 2rem;
+            }
+            
+            .price {
+                font-size: 1.8rem;
+            }
+            
+            .footer-content {
+                gap: 30px;
+            }
+            
+            .hero-stats .stat {
+                min-width: 100px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            /* Responsividade adicional para depoimentos */
+            .carousel-wrapper {
+                height: 460px;
+            }
+            
+            .testimonial-text {
+                font-size: 1rem;
+                max-height: 160px;
+            }
+            
+            .transformation-metrics {
+                flex-direction: column;
+                gap: 12px;
+                max-width: 200px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .metric {
+                min-width: auto;
+                max-width: none;
+                padding: 15px;
+            }
+            
+            .author-avatar {
+                width: 55px;
+                height: 55px;
+            }
+            
+            .author-info h4 {
+                font-size: 1.1rem;
+            }
+            
+            .quote-mark {
+                font-size: 3rem;
+            }
+            
+            .carousel-indicators {
+                gap: 8px;
+            }
+            
+            .indicator {
+                width: 8px;
+                height: 8px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .image-container {
+                max-width: 280px;
+                height: 350px;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        /* ===== ANIMAÇÕES E EFEITOS ESPECIAIS ===== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .testimonial-slide.active .testimonial-content {
+            animation: fadeIn 0.8s ease;
+        }
+
+        /* Scrollbar personalizada para o texto */
+        .testimonial-text::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .testimonial-text::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .testimonial-text::-webkit-scrollbar-thumb {
+            background: #4CAF50;
+            border-radius: 10px;
+        }
+
+        .testimonial-text::-webkit-scrollbar-thumb:hover {
+            background: #388E3C;
+        }
+
+        /* Efeito de foco para acessibilidade */
+        .carousel-btn:focus,
+        .indicator:focus,
+        .btn:focus {
+            outline: 2px solid #4CAF50;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="img/Logo-img (200 x 80 px) (120 x 60 px).png" alt="Dra. Ana Silva - Nutricionista">
+                </div>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#ebook">Ebook</a></li>
+                    <li><a href="#compulsion">Compulsão Alimentar</a></li>
+                    <li><a href="#plans">Planos</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="img/IMG_4789.jpg" alt="Dra. Ana Silva">
+                        <div class="image-decoration"></div>
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <h1>TRANSFORME A SUA RELAÇÃO COM A COMIDA</h1>
+                    <p>Nutricionista especializada em compulsão alimentar com mais de 10 anos de experiência ajudando pacientes a conquistarem uma vida mais saudável e equilibrada.</p>
+                    <div class="hero-buttons">
+                        <a href="#ebook" class="btn">Conheça Meu Ebook</a>
+                        <a href="#contact" class="btn btn-secondary">Agende uma Consulta</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Pacientes Atendidos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Anos de Experiência</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">97%</span>
+                            <span class="stat-label">Taxa de Satisfação</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO SOBRE ===== -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="img/IMG_4845.jpg" alt="Dra. Ana Silva">
+                </div>
+                <div class="about-text">
+                    <h3>Especialista em Comportamento Alimentar</h3>
+                    <p>Sou Ana Silva, nutricionista formada há mais de 10 anos, com especialização em comportamento alimentar e transtornos alimentares. Minha missão é ajudar pessoas a desenvolverem uma relação saudável com a comida, sem restrições extremas ou culpa.</p>
+                    <p>Atendo pacientes com diferentes perfis e objetivos, mas minha especialidade é o tratamento da compulsão alimentar, um distúrbio que afeta milhões de pessoas em todo o mundo.</p>
+                    <p>Com uma abordagem humanizada e baseada em evidências científicas, ajudo meus pacientes a entenderem os gatilhos emocionais que levam à compulsão e a desenvolverem estratégias práticas para superá-los.</p>
+                    <a href="#contact" class="btn">Agende uma Consulta</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO EBOOK ===== -->
+    <section class="ebook" id="ebook">
+        <div class="container">
+            <h2>Ebook: Domine sua Compulsão Alimentar</h2>
+            <div class="ebook-content">
+                <div class="ebook-img">
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ebook Domine sua Compulsão Alimentar">
+                </div>
+                <div class="ebook-info">
+                    <h3>Um guia prático para superar a compulsão alimentar</h3>
+                    <p>Este ebook é o resultado de anos de experiência clínica e pesquisa sobre compulsão alimentar. Nele, compartilho estratégias testadas e aprovadas por centenas de pacientes que conseguiram transformar sua relação com a comida.</p>
+                    <p>Você aprenderá a identificar os gatilhos emocionais, desenvolver hábitos alimentares saudáveis e criar uma mentalidade positiva em relação à comida.</p>
+                    
+                    <div class="price">
+                        <span class="old-price">R$ 97,00</span> 
+                        <span>R$ 47,00</span>
+                    </div>
+                    
+                    <a href="#" class="btn">Comprar Agora</a>
+                    
+                    <div class="benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Identifique seus gatilhos emocionais</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Estratégias práticas para o dia a dia</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Plano alimentar de 30 dias</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Exercícios de mindfulness alimentar</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Receitas saudáveis e saborosas</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Suporte por e-mail por 30 dias</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO COMPULSÃO ALIMENTAR ===== -->
+    <section class="compulsion" id="compulsion">
+        <div class="container">
+            <h2 class="section-title">Compulsão Alimentar: Entenda e Supere</h2>
+            
+            <div class="compulsion-content">
+                <div class="cards-container">
+                    <!-- Card 1 - O que é Compulsão Alimentar -->
+                    <div class="info-card" data-card="1">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>O que é Compulsão Alimentar?</h3>
+                            <div class="card-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p>A compulsão alimentar é um transtorno caracterizado por episódios recorrentes de consumo de grandes quantidades de comida em um curto período, acompanhado de uma sensação de perda de controle.</p>
+                            <p>Diferente da fome física, a compulsão está frequentemente ligada a emoções como ansiedade, estresse, tristeza ou tédio. É uma tentativa de preencher um vazio emocional com comida.</p>
+                            <div class="comparison">
+                                <div class="comparison-item">
+                                    <h4>Fome Física</h4>
+                                    <ul>
+                                        <li>Surge gradualmente</li>
+                                        <li>Pode esperar</li>
+                                        <li>Satisfeita com qualquer alimento</li>
+                                        <li>Para quando está saciado</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-item">
+                                    <h4>Compulsão</h4>
+                                    <ul>
+                                        <li>Surge subitamente</li>
+                                        <li>Urgência para comer</li>
+                                        <li>Desejo por alimentos específicos</li>
+                                        <li>Continua mesmo após saciedade</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 - Sinais e Sintomas -->
+                    <div class="info-card" data-card="2">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3>Sinais e Sintomas</h3>
+                            <div class="card-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="symptoms-grid">
+                                <div class="symptom-item">
+                                    <div class="symptom-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                    <p>Comer mesmo quando não está com fome</p>
+                                </div>
+                                <div class="symptom-item">
+                                    <div class="symptom-icon">
+                                        <i class="fas fa-ban"></i>
+                                    </div>
+                                    <p>Sentir perda de controle durante o episódio</p>
+                                </div>
+                                <div class="symptom-item">
+                                    <div class="symptom-icon">
+                                        <i class="fas fa-running"></i>
+                                    </div>
+                                    <p>Comer rapidamente e em segredo</p>
+                                </div>
+                                <div class="symptom-item">
+                                    <div class="symptom-icon">
+                                        <i class="fas fa-sad-tear"></i>
+                                    </div>
+                                    <p>Sentir culpa, vergonha ou angústia após o episódio</p>
+                                </div>
+                                <div class="symptom-item">
+                                    <div class="symptom-icon">
+                                        <i class="fas fa-balance-scale"></i>
+                                    </div>
+                                    <p>Tentativas frequentes de fazer dietas restritivas</p>
+                                </div>
+                            </div>
+                            <div class="symptom-quiz">
+                                <h4>Você se identifica com estes sintomas?</h4>
+                                <p>Marque os que você já experimentou:</p>
+                                <div class="quiz-options">
+                                    <label><input type="checkbox"> Comer mesmo sem fome</label>
+                                    <label><input type="checkbox"> Perda de controle ao comer</label>
+                                    <label><input type="checkbox"> Comer escondido</label>
+                                    <label><input type="checkbox"> Sentir culpa após comer</label>
+                                    <label><input type="checkbox"> Ciclo de dietas restritivas</label>
+                                </div>
+                                <button class="quiz-btn">Ver resultado</button>
+                                <div class="quiz-result" style="display: none;">
+                                    <p>Se você marcou 3 ou mais sintomas, é importante buscar ajuda profissional.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 - Impactos na Saúde -->
+                    <div class="info-card" data-card="3">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h3>Impactos na Saúde</h3>
+                            <div class="card-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p>A compulsão alimentar pode levar a diversos problemas de saúde física e mental:</p>
+                            
+                            <div class="health-impacts">
+                                <div class="impact-category">
+                                    <h4>Saúde Física</h4>
+                                    <div class="impact-items">
+                                        <span class="impact-tag">Obesidade</span>
+                                        <span class="impact-tag">Diabetes</span>
+                                        <span class="impact-tag">Pressão alta</span>
+                                        <span class="impact-tag">Colesterol elevado</span>
+                                        <span class="impact-tag">Problemas digestivos</span>
+                                    </div>
+                                </div>
+                                <div class="impact-category">
+                                    <h4>Saúde Mental</h4>
+                                    <div class="impact-items">
+                                        <span class="impact-tag">Depressão</span>
+                                        <span class="impact-tag">Ansiedade</span>
+                                        <span class="impact-tag">Baixa autoestima</span>
+                                        <span class="impact-tag">Isolamento social</span>
+                                        <span class="impact-tag">Culpa e vergonha</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="cycle-info">
+                                <h4>O Ciclo da Compulsão</h4>
+                                <div class="cycle-steps">
+                                    <div class="cycle-step">
+                                        <div class="step-number">1</div>
+                                        <p>Emoções negativas</p>
+                                    </div>
+                                    <div class="cycle-arrow">→</div>
+                                    <div class="cycle-step">
+                                        <div class="step-number">2</div>
+                                        <p>Compulsão alimentar</p>
+                                    </div>
+                                    <div class="cycle-arrow">→</div>
+                                    <div class="cycle-step">
+                                        <div class="step-number">3</div>
+                                        <p>Culpa e arrependimento</p>
+                                    </div>
+                                    <div class="cycle-arrow">→</div>
+                                    <div class="cycle-step">
+                                        <div class="step-number">4</div>
+                                        <p>Restrição alimentar</p>
+                                    </div>
+                                    <div class="cycle-arrow">→</div>
+                                    <div class="cycle-step">
+                                        <div class="step-number">5</div>
+                                        <p>Retorno ao início</p>
+                                    </div>
+                                </div>
+                                <p class="cycle-note">O ciclo de compulsão seguida de culpa pode perpetuar o problema, criando um padrão difícil de romper sem ajuda profissional.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4 - Como o Tratamento Ajuda -->
+                    <div class="info-card" data-card="4">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <h3>Como o Tratamento Ajuda</h3>
+                            <div class="card-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p>O tratamento da compulsão alimentar envolve uma abordagem multidisciplinar:</p>
+                            
+                            <div class="treatment-approaches">
+                                <div class="approach">
+                                    <div class="approach-icon">
+                                        <i class="fas fa-apple-alt"></i>
+                                    </div>
+                                    <div class="approach-text">
+                                        <h4>Reeducação Alimentar</h4>
+                                        <p>Aprender a se relacionar de forma saudável com a comida, sem restrições extremas.</p>
+                                    </div>
+                                </div>
+                                <div class="approach">
+                                    <div class="approach-icon">
+                                        <i class="fas fa-comments"></i>
+                                    </div>
+                                    <div class="approach-text">
+                                        <h4>Terapia Cognitivo-Comportamental</h4>
+                                        <p>Identificar e modificar padrões de pensamento e comportamento relacionados à comida.</p>
+                                    </div>
+                                </div>
+                                <div class="approach">
+                                    <div class="approach-icon">
+                                        <i class="fas fa-spa"></i>
+                                    </div>
+                                    <div class="approach-text">
+                                        <h4>Mindfulness</h4>
+                                        <p>Desenvolver consciência plena para reconhecer sinais de fome e saciedade.</p>
+                                    </div>
+                                </div>
+                                <div class="approach">
+                                    <div class="approach-icon">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
+                                    <div class="approach-text">
+                                        <h4>Acompanhamento Psiquiátrico</h4>
+                                        <p>Avaliação e tratamento medicamentoso quando necessário.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="treatment-goal">
+                                <h4>Objetivo do Tratamento</h4>
+                                <p>O objetivo não é apenas controlar os episódios de compulsão, mas entender e resolver as causas emocionais subjacentes, desenvolvendo uma relação saudável com a comida e com o próprio corpo.</p>
+                            </div>
+                            
+                            <div class="cta-section">
+                                <h4>Precisa de ajuda?</h4>
+                                <p>Se você identificou sinais de compulsão alimentar em sua vida, não hesite em buscar ajuda profissional.</p>
+                                <button class="cta-button">Agendar uma consulta</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="myths-simple" id="myths-simple">
+        <div class="container">
+            <h2>Mitos e Verdades sobre Compulsão Alimentar</h2>
+            
+            <div class="myths-grid">
+                <!-- Mitos -->
+                <div class="myths-column">
+                    <h3 class="myths-title">🚫 Mitos Comuns</h3>
+                    
+                    <div class="myth-item">
+                        <div class="myth-header">
+                            <span class="myth-icon">❌</span>
+                            <h4>"É falta de força de vontade"</h4>
+                        </div>
+                        <p>É um transtorno psicológico reconhecido, não uma simples questão de determinação.</p>
+                    </div>
+                    
+                    <div class="myth-item">
+                        <div class="myth-header">
+                            <span class="myth-icon">❌</span>
+                            <h4>"Só afeta pessoas com sobrepeso"</h4>
+                        </div>
+                        <p>Atinge pessoas de todos os pesos e formas corporais igualmente.</p>
+                    </div>
+                    
+                    <div class="myth-item">
+                        <div class="myth-header">
+                            <span class="myth-icon">❌</span>
+                            <h4>"Fazer dieta resolve"</h4>
+                        </div>
+                        <p>Dietas restritivas podem piorar o ciclo da compulsão alimentar.</p>
+                    </div>
+                    
+                    <div class="myth-item">
+                        <div class="myth-header">
+                            <span class="myth-icon">❌</span>
+                            <h4>"É frescura ou drama"</h4>
+                        </div>
+                        <p>Causa sofrimento real e impacta significativamente a qualidade de vida.</p>
+                    </div>
+                </div>
+                
+                <!-- Verdades -->
+                <div class="truths-column">
+                    <h3 class="truths-title">✅ Verdades Importantes</h3>
+                    
+                    <div class="truth-item">
+                        <div class="truth-header">
+                            <span class="truth-icon">✓</span>
+                            <h4>É um transtorno tratável</h4>
+                        </div>
+                        <p>Com tratamento adequado é possível desenvolver uma relação saudável com a comida.</p>
+                    </div>
+                    
+                    <div class="truth-item">
+                        <div class="truth-header">
+                            <span class="truth-icon">✓</span>
+                            <h4>Pessoas magras também sofrem</h4>
+                        </div>
+                        <p>Muitas pessoas com peso normal enfrentam a compulsão, muitas vezes em segredo.</p>
+                    </div>
+                    
+                    <div class="truth-item">
+                        <div class="truth-header">
+                            <span class="truth-icon">✓</span>
+                            <h4>Dietas podem prejudicar</h4>
+                        </div>
+                        <p>A abordagem eficaz envolve reeducação alimentar, não restrição severa.</p>
+                    </div>
+                    
+                    <div class="truth-item">
+                        <div class="truth-header">
+                            <span class="truth-icon">✓</span>
+                            <h4>É uma condição de saúde real</h4>
+                        </div>
+                        <p>Reconhecida oficialmente e requer atenção e tratamento especializado.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="myths-note">
+                <p>Compreender a realidade sobre a compulsão alimentar é o primeiro passo para buscar ajuda adequada.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO DEPOIMENTOS ===== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2 class="section-title">Da Compulsão à Liberdade</h2>
+                <p class="section-subtitle">Descubra histórias reais de pessoas que transformaram sua relação com a comida</p>
+            </div>
+
+            <div class="testimonials-carousel">
+                <div class="carousel-wrapper">
+                    <!-- Slide 1 - Ana -->
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-content">
+                            <div class="quote-mark">“</div>
+                            <blockquote class="testimonial-text">
+                                "Durante 8 anos, achei que a comida era minha inimiga. Vivia entre dietas restritivas e episódios de compulsão. Com a terapia, entendi que a comida não era o problema, mas sim minha forma de lidar com as emoções. Hoje me sinto livre!"
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Ana">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Ana, 32 anos</h4>
+                                    <p>6 meses sem episódios compulsivos</p>
+                                </div>
+                            </div>
+                            <div class="transformation-metrics">
+                                <div class="metric">
+                                    <div class="metric-value">-18kg</div>
+                                    <div class="metric-label">Naturalmente</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">0</div>
+                                    <div class="metric-label">Dietas restritivas</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">100%</div>
+                                    <div class="metric-label">Mais confiante</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 - Carlos -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="quote-mark">“</div>
+                            <blockquote class="testimonial-text">
+                                "Sempre usei a comida como válvula de escape para o estresse do trabalho. Chegava em casa e comia sem controle. Achava que era fraqueza de caráter. O tratamento me mostrou que era uma condição médica tratável. Hoje tenho ferramentas para lidar com o estresse de forma saudável."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Carlos">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Carlos, 41 anos</h4>
+                                    <p>4 meses em recuperação</p>
+                                </div>
+                            </div>
+                            <div class="transformation-metrics">
+                                <div class="metric">
+                                    <div class="metric-value">-12kg</div>
+                                    <div class="metric-label">Peso saudável</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">80%</div>
+                                    <div class="metric-label">Menos ansiedade</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">100%</div>
+                                    <div class="metric-label">Controle recuperado</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 - Marina -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="quote-mark">“</div>
+                            <blockquote class="testimonial-text">
+                                "Depois da maternidade, desenvolvi uma relação terrível com a comida. Comia escondida, sentia muita culpa. Pensava que era a única pessoa passando por isso. O grupo de apoio me mostrou que não estava sozinha. Hoje sou exemplo de saúde para minha filha."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Marina">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Marina, 29 anos</h4>
+                                    <p>8 meses de recuperação</p>
+                                </div>
+                            </div>
+                            <div class="transformation-metrics">
+                                <div class="metric">
+                                    <div class="metric-value">-15kg</div>
+                                    <div class="metric-label">Saúde recuperada</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">100%</div>
+                                    <div class="metric-label">Autoestima</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">1</div>
+                                    <div class="metric-label">Exemplo para filha</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles do Carrossel -->
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev-btn" aria-label="Depoimento anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                    </div>
+                    
+                    <button class="carousel-btn next-btn" aria-label="Próximo depoimento">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO PLANOS ===== -->
+    <section class="plans" id="plans">
+        <div class="container">
+            <h2 class="section-title">Planos de Consulta</h2>
+            <p class="section-subtitle">Escolha o plano ideal para sua jornada de recuperação</p>
+            
+            <div class="plans-container">
+                <!-- Plano Básico -->
+                <div class="plan">
+                    <div class="plan-header">
+                        <h3>Consulta Avulsa</h3>
+                        <div class="plan-badge">Básico</div>
+                    </div>
+                    <div class="plan-price">
+                        <span class="currency">R$</span>
+                        <span class="amount">200</span>
+                        <span class="period">/consulta</span>
+                    </div>
+                    <div class="plan-description">
+                        <p>Ideal para quem busca uma avaliação inicial e orientação pontual</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Avaliação completa e detalhada</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Plano alimentar personalizado</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Duração: 60 minutos</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Retorno em 30 dias</span>
+                        </li>
+                        <li class="disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Suporte entre consultas</span>
+                        </li>
+                        <li class="disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Materiais exclusivos</span>
+                        </li>
+                    </ul>
+                    <div class="plan-actions">
+                        <a href="#contact" class="btn btn-outline">Agendar Consulta</a>
+                        <div class="savings-info">Economize com nossos pacotes</div>
+                    </div>
+                </div>
+
+                <!-- Plano Destacado -->
+                <div class="plan featured">
+                    <div class="plan-header">
+                        <h3>Pacote 3 Meses</h3>
+                        <div class="plan-badge popular">Mais Popular</div>
+                        <div class="featured-ribbon">Recomendado</div>
+                    </div>
+                    <div class="plan-price">
+                        <span class="currency">R$</span>
+                        <span class="amount">500</span>
+                        <span class="period">/3 meses</span>
+                    </div>
+                    <div class="price-comparison">
+                        <span class="original-price">R$ 600</span>
+                        <span class="discount">Economize R$ 100</span>
+                    </div>
+                    <div class="plan-description">
+                        <p>Perfeito para quem quer resultados consistentes com acompanhamento próximo</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Consulta inicial completa</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>3 consultas de acompanhamento</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Ajustes no plano alimentar</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Suporte por WhatsApp</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Ebook "Mindful Eating" incluído</span>
+                        </li>
+                        <li class="disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Grupo de apoio online</span>
+                        </li>
+                    </ul>
+                    <div class="plan-actions">
+                        <a href="#contact" class="btn btn-primary">Começar Agora</a>
+                        <div class="payment-info">ou 3x de R$ 166,67</div>
+                    </div>
+                </div>
+
+                <!-- Plano Premium -->
+                <div class="plan premium">
+                    <div class="plan-header">
+                        <h3>Pacote 6 Meses</h3>
+                        <div class="plan-badge">Premium</div>
+                    </div>
+                    <div class="plan-price">
+                        <span class="currency">R$</span>
+                        <span class="amount">900</span>
+                        <span class="period">/6 meses</span>
+                    </div>
+                    <div class="price-comparison">
+                        <span class="original-price">R$ 1.200</span>
+                        <span class="discount">Economize R$ 300</span>
+                    </div>
+                    <div class="plan-description">
+                        <p>Transformação completa com suporte integral e comunidade de apoio</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Consulta inicial completa</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>6 consultas de acompanhamento</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Ajustes ilimitados no plano</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Suporte prioritário 24/7</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Ebook + materiais exclusivos</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Grupo de apoio online VIP</span>
+                        </li>
+                    </ul>
+                    <div class="plan-actions">
+                        <a href="#contact" class="btn btn-primary">Transformar Minha Vida</a>
+                        <div class="payment-info">ou 6x de R$ 150,00</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informações adicionais -->
+            <div class="plans-info">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Garantia de 7 Dias</h4>
+                        <p>Se não ficar satisfeito(a), devolvemos seu dinheiro</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h4>Agendamento Flexível</h4>
+                        <p>Horários disponíveis inclusive aos finais de semana</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h4>Profissional Especializado</h4>
+                        <p>Nutricionista com 8 anos de experiência em transtornos alimentares</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4>Suporte Humanizado</h4>
+                        <p>Atendimento individualizado e acolhedor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO DEPOIMENTOS DO EBOOK ===== -->
+    <section class="ebook-testimonials" id="ebook-testimonials">
+        <div class="container">
+            <h2>O que dizem sobre o Ebook</h2>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "O ebook da Dra. Ana mudou completamente minha relação com a comida. Pela primeira vez em anos, me sinto no controle."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Maria Santos">
+                        </div>
+                        <div class="author-info">
+                            <h4>Maria Santos</h4>
+                            <p>Comprou o ebook há 2 meses</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "As estratégias são práticas e fáceis de aplicar no dia a dia. Em um mês, reduzi pela metade meus episódios de compulsão."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Carla Mendes">
+                        </div>
+                        <div class="author-info">
+                            <h4>Carla Mendes</h4>
+                            <p>Comprou o ebook há 3 meses</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Finalmente entendi que a compulsão não é sobre falta de força de vontade. O ebook me deu as ferramentas para lidar com as emoções."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Roberto Almeida">
+                        </div>
+                        <div class="author-info">
+                            <h4>Roberto Almeida</h4>
+                            <p>Comprou o ebook há 1 mês</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO FAQ ===== -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>O ebook é adequado para quem nunca fez tratamento?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, o ebook foi desenvolvido para ser acessível tanto para quem nunca fez tratamento quanto para quem já tentou outras abordagens. Ele começa com conceitos básicos e avança gradualmente para estratégias mais complexas.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quanto tempo levo para ver resultados?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Os resultados variam de pessoa para pessoa, mas a maioria dos leitores relata melhoras significativas dentro de 4 a 6 semanas de aplicação consistente das estratégias. O importante é seguir o plano proposto e ser paciente consigo mesmo.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>O ebook substitui a terapia?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não. O ebook é um recurso educacional e de autoajuda que pode ser muito eficaz, mas não substitui o acompanhamento profissional individualizado. Em casos mais graves, recomendamos que o ebook seja usado como complemento à terapia.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Como recebo o ebook após a compra?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Imediatamente após a confirmação do pagamento, você receberá um e-mail com o link para download do ebook em formato PDF. Você também terá acesso a uma área de membros com materiais complementares.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Há garantia de satisfação?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, oferecemos garantia incondicional de 7 dias. Se por qualquer motivo você não ficar satisfeito com o ebook, basta nos enviar um e-mail dentro desse período que devolvemos 100% do valor pago.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-media" id="social-media">
+        <div class="container">
+            <h2>Siga-nos nas Redes Sociais</h2>
+            <p class="social-intro">Acompanhe nosso conteúdo sobre saúde mental e bem-estar</p>
+            
+            <div class="social-grid">
+                <!-- Instagram -->
+                <div class="social-card instagram">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>Dicas diárias e conteúdo visual</p>
+                    <a href="#" class="social-link" target="_blank">
+                        <span>Seguir no Instagram</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+                <!-- Facebook -->
+                <div class="social-card facebook">
+                    <div class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <h3>Facebook</h3>
+                    <p>Artigos e comunidade de apoio</p>
+                    <a href="#" class="social-link" target="_blank">
+                        <span>Curta nossa página</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+                <!-- Twitter -->
+                <div class="social-card twitter">
+                    <div class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <h3>Twitter</h3>
+                    <p>Notícias e interações</p>
+                    <a href="#" class="social-link" target="_blank">
+                        <span>Seguir no Twitter</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+                <!-- WhatsApp -->
+                <div class="social-card whatsapp">
+                    <div class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Suporte direto</p>
+                    <a href="#" class="social-link" target="_blank">
+                        <span>Falar no WhatsApp</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO CONTATO ===== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Vamos conversar?</h3>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Endereço</h4>
+                                <p>Av. Paulista, 1000 - São Paulo/SP</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telefone</h4>
+                                <p>(11) 99999-9999</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>E-mail</h4>
+                                <p>contato@dranasilva.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Seu nome" required>
+                        <input type="email" placeholder="Seu e-mail" required>
+                        <input type="tel" placeholder="Seu telefone">
+                        <select required>
+                            <option value="" disabled selected>Assunto</option>
+                            <option value="consulta">Agendar Consulta</option>
+                            <option value="duvida">Dúvida sobre o Ebook</option>
+                            <option value="orcamento">Orçamento</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                        <textarea placeholder="Sua mensagem" required></textarea>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Dra. Ana Silva</h3>
+                    <p>Nutricionista especializada em compulsão alimentar com mais de 10 anos de experiência ajudando pacientes a conquistarem uma vida mais saudável.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#ebook">Ebook</a></li>
+                        <li><a href="#plans">Planos</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo/SP</li>
+                        <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
+                        <li><i class="fas fa-envelope"></i> contato@dranasilva.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Dra. Ana Silva. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Menu toggle para mobile
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+        
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                const isActive = item.classList.contains('active');
+                
+                // Fecha todas as outras FAQs
+                document.querySelectorAll('.faq-item').forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                });
+                
+                // Abre a FAQ clicada se não estava ativa
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+        
+        // Form submission (simulação)
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            this.reset();
+        });
+        
+        // Ebook purchase simulation
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if(this.textContent.includes('Comprar')) {
+                    e.preventDefault();
+                    alert('Redirecionando para a página de pagamento...');
+                    // Em um site real, aqui seria o redirecionamento para a página de checkout
+                }
+            });
+        });
+
+        // Toggle dos cards da seção compulsão alimentar
+        document.querySelectorAll('.card-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const card = this.parentElement;
+                card.classList.toggle('active');
+            });
+        });
+        
+        // Quiz interativo
+        const quizBtn = document.querySelector('.quiz-btn');
+        const quizResult = document.querySelector('.quiz-result');
+        
+        if (quizBtn) {
+            quizBtn.addEventListener('click', function() {
+                const checkedBoxes = document.querySelectorAll('.quiz-options input:checked');
+                
+                if (checkedBoxes.length >= 3) {
+                    quizResult.innerHTML = '<p>Se você marcou 3 ou mais sintomas, é importante buscar ajuda profissional. A compulsão alimentar é tratável e você não precisa enfrentar isso sozinho(a).</p>';
+                } else if (checkedBoxes.length > 0) {
+                    quizResult.innerHTML = '<p>Alguns sinais estão presentes. Fique atento(a) ao seu comportamento alimentar e considere buscar orientação se esses episódios se tornarem frequentes.</p>';
+                } else {
+                    quizResult.innerHTML = '<p>Você não identificou sinais de compulsão alimentar. Continue mantendo uma relação saudável com a comida!</p>';
+                }
+                
+                quizResult.style.display = 'block';
+            });
+        }
+        
+        // Botão CTA
+        const ctaButton = document.querySelector('.cta-button');
+        
+        if (ctaButton) {
+            ctaButton.addEventListener('click', function() {
+                alert('Obrigado pelo seu interesse! Em um site real, este botão redirecionaria para um formulário de agendamento de consulta.');
+            });
+        }
+
+        // Carrossel de depoimentos
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentSlide = 0;
+        let autoPlayInterval;
+
+        // Função para mostrar slide específico
+        function showSlide(index) {
+            // Remove classe active de todos os slides e indicadores
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Adiciona classe active ao slide e indicador atual
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        // Função para próximo slide
+        function nextSlide() {
+            let newIndex = currentSlide + 1;
+            if (newIndex >= slides.length) newIndex = 0;
+            showSlide(newIndex);
+        }
+
+        // Função para slide anterior
+        function prevSlide() {
+            let newIndex = currentSlide - 1;
+            if (newIndex < 0) newIndex = slides.length - 1;
+            showSlide(newIndex);
+        }
+
+        // Event listeners para os indicadores
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showSlide(index);
+                resetAutoPlay();
+            });
+        });
+
+        // Event listeners para os botões de navegação
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoPlay();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoPlay();
+        });
+
+        // Auto-play
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+
+        // Iniciar auto-play
+        startAutoPlay();
+
+        // Pausar auto-play quando o usuário interagir com o carrossel
+        const carousel = document.querySelector('.testimonials-carousel');
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+            startAutoPlay();
+        });
+
+        // Navegação por teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+                resetAutoPlay();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+                resetAutoPlay();
+            }
+        });
+
+        // Smooth scroll para os botões
+        document.querySelectorAll('a[href^="#"]').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Animações dos números das métricas
+        function animateMetrics() {
+            const metricValues = document.querySelectorAll('.metric-value');
+            
+            metricValues.forEach(value => {
+                const originalText = value.textContent;
+                value.textContent = '0';
+                
+                let targetValue;
+                if (originalText.includes('%')) {
+                    targetValue = parseInt(originalText);
+                } else if (originalText.includes('kg')) {
+                    targetValue = parseInt(originalText.replace('-', '').replace('kg', ''));
+                } else {
+                    targetValue = parseInt(originalText);
+                }
+                
+                let current = 0;
+                const increment = targetValue / 20;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= targetValue) {
+                        value.textContent = originalText;
+                        clearInterval(timer);
+                    } else {
+                        if (originalText.includes('%')) {
+                            value.textContent = Math.round(current) + '%';
+                        } else if (originalText.includes('kg')) {
+                            value.textContent = '-' + Math.round(current) + 'kg';
+                        } else {
+                            value.textContent = Math.round(current);
+                        }
+                    }
+                }, 50);
+            });
+        }
+
+        // Observar quando a seção de depoimentos entra na viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const activeSlide = document.querySelector('.testimonial-slide.active');
+                    if (activeSlide) {
+                        animateMetrics();
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        observer.observe(document.querySelector('.testimonials'));
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animação de entrada dos cards
+            const socialCards = document.querySelectorAll('.social-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            socialCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+            
+            // Efeito de clique nos links sociais
+            const socialLinks = document.querySelectorAll('.social-link');
+            socialLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Em um site real, isso redirecionaria para a rede social
+                    e.preventDefault();
+                    
+                    const platform = this.closest('.social-card').classList[1];
+                    const platformNames = {
+                        'instagram': 'Instagram',
+                        'facebook': 'Facebook',
+                        'twitter': 'Twitter',
+                        'whatsapp': 'WhatsApp'
+                    };
+                    
+                    alert(`Você seria redirecionado para nosso ${platformNames[platform]}`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
